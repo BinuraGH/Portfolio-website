@@ -241,7 +241,7 @@
         <h2>Publications</h2>
       </div>
       <div class="pub-card reveal">
-        <img src="./assets/ICECET.png" alt="Mobitel" class="pub-logo"" />
+        <img src="./assets/ICECET.png" alt="Mobitel" class="pub-logo"/>
         <div class="pub-content">
           <h3>"Multilingual AI Call Center Bot with Sentiment-Aware Dialogue"</h3>
           <div class="pub-meta">
@@ -515,7 +515,7 @@
           <div class="edu-icon">
             <img src="./assets/ucsc-logo.png" alt="UCSC"
               onerror="this.style.display='none';this.parentNode.innerHTML='<i class=\'fas fa-laptop-code\'></i>';"
-              style="width:90px; height:90px; object-fit:contain;" />
+              style="width:195px; height:195px; object-fit:contain;" />
           </div>
           <div class="edu-top">
             <div>
@@ -534,14 +534,14 @@
           <div class="edu-icon">
             <img src="./assets/school-logo.png" alt="Bandaranayake Central College"
               onerror="this.style.display='none';this.parentNode.innerHTML='<i class=\'fas fa-school\'></i>';"
-              style="width:90px; height:90px; object-fit:contain;" />
+              style="width:195px; height:195px; object-fit:contain;" />
           </div>
           <div class="edu-top">
             <div>
               <h4>Bandaranayake Central College, Veyangoda</h4>
               <p class="edu-degree">G.C.E Advanced Level – Physical Science Stream</p>
               <div class="edu-meta">
-                <span><i class="far fa-calendar-alt"></i> 2019</span>
+                <!-- <span><i class="far fa-calendar-alt"></i> 2019</span> -->
                 <span><i class="fas fa-chart-line"></i> Z-Score: 1.3140</span>
               </div>
             </div>
@@ -645,7 +645,7 @@
           </div>
         </div>
         <div class="contact-form reveal">
-          <form id="contactForm" onsubmit="handleFormSubmit(event)">
+          <form id="contactForm" action="https://formspree.io/f/mvzlbrno" method="POST">
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -664,10 +664,9 @@
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fas fa-paper-plane"></i> Send Message
-            </button>
-            <p class="form-note" id="formNote"></p>
+              <button type="submit" class="btn btn-primary btn-full">
+                <i class="fas fa-paper-plane"></i> Send Message
+              </button>
           </form>
         </div>
       </div>

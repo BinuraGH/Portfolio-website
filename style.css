@@ -1046,6 +1046,7 @@ h1, h2, h3, h4, h5 {
   grid-template-columns: 1fr 1fr;
   gap: 1.5rem;
   padding-left: 0;
+  align-items: stretch;
 }
 .edu-timeline::before { display: none; }
 .edu-dot { display: none; }
