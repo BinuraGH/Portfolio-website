@@ -1285,6 +1285,12 @@ h1, h2, h3, h4, h5 {
 .form-group textarea::placeholder { color: #484f58; }
 .form-note { font-size: 0.82rem; margin-top: 0.6rem; text-align: center; color: var(--teal); }
 
+
+/* ADD these specific overrides */
+.ci-item:nth-child(1) .ci-icon { background: #fafafa; }
+.ci-item:nth-child(2) .ci-icon { background: #f4f4f4; }
+.ci-item:nth-child(3) .ci-icon { background: #24292e; }
+.ci-item:nth-child(4) .ci-icon { background: #ffffff; }
 /* =========================================
    FOOTER
    ========================================= */
