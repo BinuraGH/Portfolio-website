@@ -407,10 +407,25 @@ h1, h2, h3, h4, h5 {
   transition: all 0.2s;
 }
 .hero-socials a:hover {
-  background: var(--teal);
-  border-color: var(--teal);
-  color: #0a0a0f;
   transform: translateY(-3px);
+}
+
+.hero-socials a[aria-label="LinkedIn"]:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  color: #ffffff;
+}
+
+.hero-socials a[aria-label="GitHub"]:hover {
+  background: #333333;
+  border-color: #6e5494;
+  color: #ffffff;
+}
+
+.hero-socials a[aria-label="Email"]:hover {
+  background: #EA4335;
+  border-color: #EA4335;
+  color: #ffffff;
 }
 
 /* RIGHT: photo panel */
