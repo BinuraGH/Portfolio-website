@@ -1124,46 +1124,61 @@ h1, h2, h3, h4, h5 {
    ========================================= */
 .cert-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.2rem;
 }
 .cert-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+  position: relative;
   border-radius: var(--radius);
-  padding: 1.4rem 1.2rem;
-  text-align: center;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  background: #ffffff;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 0.75rem;
+  min-height: 200px;
+  border: none;
+  box-shadow: none;
+  outline: none;
+  transition: transform 0.22s, box-shadow 0.22s;
 }
 .cert-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-  border-color: rgba(60,180,160,0.2);
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 2px var(--teal), 0 0 16px rgba(60,180,160,0.4);
 }
-.cert-icon {
-  width: 54px; height: 54px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, var(--blue), var(--sky));
+.cert-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  filter: brightness(1.4) saturate(1.3);
+}
+
+.cert-body {
+  position: relative;
+  z-index: 1;
+  padding: 1.5rem 1.2rem;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 1.3rem;
+  flex-direction: column;
+  justify-content: flex-end;
+  flex: 1;
+  background: linear-gradient(to top, rgba(10,10,15,0.6) 20%, transparent 100%);
 }
 .cert-body h4 {
   font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 700;
   color: var(--text-primary);
   line-height: 1.3;
-  margin-bottom: 0.25rem;
+  margin-bottom: 0.3rem;
 }
-.cert-body p { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 0.6rem; }
+.cert-body p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
 
 /* =========================================
    LANGUAGES & EXTRAS
@@ -1328,70 +1343,6 @@ h1, h2, h3, h4, h5 {
   border-color: var(--teal);
   color: #0a0a0f;
   transform: translateY(-3px);
-}
-
-/* =========================================
-   RESPONSIVE DESIGN
-   ========================================= */
-@media (max-width: 1024px) {
-  .hero-container { grid-template-columns: 1fr; }
-  .hero-content { padding: 100px 2rem 60px 2rem; text-align: center; align-items: center; }
-  .hero-image-wrap {
-    height: 420px;
-    order: -1;
-  }
-  .hero-photo {
-    mask-image:
-      linear-gradient(to bottom, black 50%, transparent 100%),
-      linear-gradient(to right,  black 80%, transparent 100%),
-      linear-gradient(to left,   black 80%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-image:
-      linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-composite: source-in;
-  }
-  .card-1 { bottom: 10px; left: 20px; }
-  .card-2 { top: 10px; right: 20px; left: auto; }
-  .hero-desc { text-align: center; margin: 0 auto 1.6rem; }
-  .hero-actions { justify-content: center; }
-  .exp-modules { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-  .hamburger { display: flex; }
-  .nav-links {
-    position: fixed;
-    top: 64px; left: 0; right: 0;
-    background: #0a0a0f;
-    border-bottom: 1px solid var(--border);
-    flex-direction: column;
-    align-items: stretch;
-    padding: 1rem;
-    gap: 0;
-    transform: translateY(-110%);
-    transition: transform 0.35s ease;
-    z-index: 999;
-  }
-  .nav-links.open { transform: translateY(0); }
-  .nav-link { padding: 0.75rem 1rem; border-radius: 8px; }
-  .btn-cv { margin: 0.5rem 0 0; text-align: center; }
-
-  .about-grid { grid-template-columns: 1fr; }
-  .about-cards { grid-template-columns: 1fr 1fr; }
-  .contact-grid { grid-template-columns: 1fr; }
-  .form-row { grid-template-columns: 1fr; }
-  .extras-grid { grid-template-columns: 1fr; gap: 2rem; }
-  .pub-card { flex-direction: column; }
-  .edu-timeline { padding-left: 1.5rem; }
-  .edu-dot { left: -1.8rem; }
-}
-
-@media (max-width: 540px) {
-  .section { padding: 3.5rem 0; }
-  .projects-grid { grid-template-columns: 1fr; }
-  .cert-grid { grid-template-columns: 1fr 1fr; }
-  .sys-components { grid-template-columns: 1fr; }
-  .about-cards { grid-template-columns: 1fr; }
 }
 
 /* =========================================
@@ -1573,7 +1524,7 @@ h1, h2, h3, h4, h5 {
 
   /* Grids */
   .projects-grid { grid-template-columns: 1fr; }
-  .cert-grid { grid-template-columns: 1fr; }
+  .cert-grid { grid-template-columns: repeat(2, 1fr); }
   .sys-components { grid-template-columns: 1fr; }
   .edu-timeline { grid-template-columns: 1fr; }
   .edu-icon { width: 130px; height: 130px; }
