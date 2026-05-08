@@ -1351,22 +1351,72 @@ h1, h2, h3, h4, h5 {
   transform: translateY(-3px);
 }
 
+
+
+
+
+
+
+
+
 /* =========================================
    RESPONSIVE DESIGN
    ========================================= */
 @media (max-width: 1024px) {
-  .hero-content { padding: 100px 2rem 60px 2rem; text-align: center; align-items: center; }
-  .hero-image-wrap { height: 420px; }
+  /* Navbar fix for tablet */
+  .nav-links { gap: 0; }
+  .nav-link {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.4rem;
+  }
+  .btn-cv {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.7rem;
+    white-space: nowrap;
+  }
+  .nav-logo { font-size: 1rem; }
+
+  /* Hero */
+  .hero {
+    position: relative !important;
+    top: auto !important;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    min-height: 100vh;
+    height: auto;
+    width: 100%;
+  }
+  .hero-image-wrap {
+    position: relative;
+    width: 100%;
+    height: 55vh;
+    top: auto;
+    right: auto;
+    order: -1;
+  }
+  .hero-content {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    padding: 2rem 2rem 3rem;
+    text-align: center;
+    z-index: 2;
+    order: 1;
+  }
   .hero-photo {
-    mask-image:
-      linear-gradient(to bottom, black 50%, transparent 100%),
-      linear-gradient(to right,  black 80%, transparent 100%),
-      linear-gradient(to left,   black 80%, transparent 100%);
-    mask-composite: intersect;
-    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
-    -webkit-mask-composite: source-in;
+    object-fit: contain;
+    object-position: center top;
+    mask-image: none;
+    -webkit-mask-image: none;
   }
   .hero-actions { justify-content: center; }
+  .hero-socials { justify-content: center; }
   .exp-modules { grid-template-columns: 1fr; }
   .edu-timeline { grid-template-columns: 1fr 1fr; }
   .skill-logo-row {
@@ -1379,11 +1429,11 @@ h1, h2, h3, h4, h5 {
   /* Navbar */
   .navbar {
     position: fixed;
+    top: 0 !important;
     z-index: 1000;
-  }
-  .nav-container {
     overflow: visible;
   }
+  .nav-container { overflow: visible; }
   .nav-logo {
     font-size: 1rem;
     white-space: nowrap;
@@ -1404,18 +1454,24 @@ h1, h2, h3, h4, h5 {
     transform: translateY(-110%);
     transition: transform 0.35s ease;
     z-index: 999;
+    visibility: hidden;
+    overflow: hidden;
   }
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open {
+    transform: translateY(0);
+    visibility: visible;
+  }
   .nav-link { padding: 0.75rem 1rem; border-radius: 8px; }
   .btn-cv { margin: 0.5rem 0 0; text-align: center; }
 
   /* Hero */
   .hero {
-    position: relative;
-    top: auto;
+    position: relative !important;
+    top: auto !important;
     min-height: auto;
     flex-direction: column;
-    padding-top: 64px;
+    padding-top: 0;
+    margin-top: 64px;
   }
   .hero-container {
     display: flex;
@@ -1482,9 +1538,22 @@ h1, h2, h3, h4, h5 {
   .section { padding: 3rem 0; }
 
   /* Navbar */
+  .navbar {
+    position: fixed;
+    top: 0 !important;
+    z-index: 1000;
+    overflow: visible;
+  }
   .nav-logo {
     font-size: 0.9rem;
     max-width: 140px;
+  }
+  .nav-links {
+    visibility: hidden;
+    overflow: hidden;
+  }
+  .nav-links.open {
+    visibility: visible;
   }
 
   /* Hero */
@@ -1493,9 +1562,10 @@ h1, h2, h3, h4, h5 {
     top: auto !important;
     min-height: auto;
     flex-direction: column;
-    padding-top: 64px;
+    padding-top: 0;
+    margin-top: 64px;
   }
-    .hero-container {
+  .hero-container {
     display: flex;
     flex-direction: column;
     height: auto;
@@ -1545,7 +1615,7 @@ h1, h2, h3, h4, h5 {
 
   /* Experience */
   .exp-header { flex-direction: column; align-items: flex-start; }
-  .exp-badge { align-self: flex-start; }
+  .exp-badge { align-style: flex-start; }
 
   /* Publications */
   .pub-card { flex-direction: column; align-items: center; text-align: center; }
