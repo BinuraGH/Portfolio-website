@@ -107,7 +107,20 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('backToTop').addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-
+// Add inside DOMContentLoaded, after the onScroll function
+const scrollIndicator = document.querySelector('.scroll-indicator');
+function updateScrollIndicator() {
+  const heroHeight = document.getElementById('home').offsetHeight;
+  if (window.scrollY > heroHeight * 0.6) {
+    scrollIndicator.style.opacity = '0';
+    scrollIndicator.style.pointerEvents = 'none';
+  } else {
+    scrollIndicator.style.opacity = '1';
+    scrollIndicator.style.pointerEvents = 'auto';
+  }
+}
+window.addEventListener('scroll', updateScrollIndicator, { passive: true });
+updateScrollIndicator();
   /* ============================================
      6. CONTACT FORM — handled by Formspree
      ============================================ */
