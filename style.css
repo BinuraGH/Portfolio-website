@@ -1319,7 +1319,7 @@ h1, h2, h3, h4, h5 {
 .footer-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
@@ -1365,7 +1365,74 @@ h1, h2, h3, h4, h5 {
   color: #0a0a0f;
   transform: translateY(-3px);
 }
+.ci-simple {
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+  padding-top: 0.5rem;
+}
 
+.ci-simple-item {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  font-size: 0.95rem;
+  color: #c9d1d9;
+}
+
+.ci-simple-item i {
+  font-size: 1.1rem;
+  color: var(--teal);
+  width: 20px;
+  flex-shrink: 0;
+}
+
+.ci-simple-item a {
+  color: #c9d1d9;
+  font-weight: 500;
+}
+
+.ci-simple-item a:hover { color: var(--teal); }
+
+.ci-social-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.ci-social-row a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.ci-social-row a[aria-label="LinkedIn"]:hover {
+  background: #0077b5;
+  border-color: #0077b5;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.ci-social-row a[aria-label="GitHub"]:hover {
+  background: #333;
+  border-color: #6e5494;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.ci-social-row a[aria-label="Email"]:hover {
+  background: #EA4335;
+  border-color: #EA4335;
+  color: #fff;
+  transform: translateY(-3px);
+}
 
 
 
