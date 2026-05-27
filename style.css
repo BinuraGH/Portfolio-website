@@ -1433,7 +1433,26 @@ h1, h2, h3, h4, h5 {
   color: #fff;
   transform: translateY(-3px);
 }
-
+/* ADD after .project-actions */
+.btn-video {
+  background: #ff0000;
+  color: white;
+  border: none;
+  padding: 0.45rem 1rem;
+  border-radius: 8px;
+  font-size: 0.84rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-video:hover {
+  background: #cc0000;
+  color: white;
+  transform: translateY(-2px);
+}
 
 
 
